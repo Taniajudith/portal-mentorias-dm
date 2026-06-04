@@ -9,6 +9,7 @@
 :root{
     --azul:#003b73;
     --azul-oscuro:#002b55;
+    --azul-suave:#eaf3fb;
     --naranja:#f47c20;
     --gris:#555;
     --fondo:#f7f9fc;
@@ -21,37 +22,42 @@
 
 body{
     margin:0;
-    font-family:Arial, sans-serif;
+    font-family:'Segoe UI', Roboto, Arial, sans-serif;
     background:var(--fondo);
     color:#1f1f1f;
     line-height:1.6;
 }
 
 header{
-    background:var(--blanco);
-    padding:25px 20px;
+    background:linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    padding:28px 20px 34px;
     text-align:center;
     border-bottom:5px solid var(--naranja);
 }
 
 .logo{
-    max-width:240px;
-    margin-bottom:10px;
+    max-width:280px;
+    height:auto;
+    display:block;
+    margin:0 auto 18px;
 }
 
 header h1{
     margin:0;
     color:var(--azul);
-    font-size:44px;
+    font-size:46px;
     text-transform:uppercase;
-    letter-spacing:1px;
+    letter-spacing:2px;
+    font-weight:800;
 }
 
 header h2{
-    margin:5px 0 0;
+    margin:6px 0 0;
     color:var(--naranja);
     font-size:24px;
     text-transform:uppercase;
+    letter-spacing:1px;
+    font-weight:700;
 }
 
 nav{
@@ -63,8 +69,8 @@ nav{
 nav a{
     color:white;
     text-decoration:none;
-    font-weight:bold;
-    margin:0 12px;
+    font-weight:700;
+    margin:0 14px;
     font-size:15px;
 }
 
@@ -75,41 +81,42 @@ nav a:hover{
 .hero{
     background:linear-gradient(135deg, var(--azul), var(--azul-oscuro));
     color:white;
-    padding:60px 20px;
+    padding:70px 20px;
     text-align:center;
 }
 
 .hero h2{
-    font-size:38px;
+    font-size:42px;
     margin:0;
-    text-transform:uppercase;
+    font-weight:800;
 }
 
 .hero p{
-    font-size:20px;
-    max-width:800px;
+    font-size:21px;
+    max-width:850px;
     margin:15px auto 0;
 }
 
 .container{
     max-width:1150px;
     margin:auto;
-    padding:40px 20px;
+    padding:45px 20px;
 }
 
 .section{
     background:white;
-    padding:35px;
-    margin-bottom:30px;
-    border-radius:16px;
-    box-shadow:0 4px 14px rgba(0,0,0,0.08);
+    padding:38px;
+    margin-bottom:32px;
+    border-radius:18px;
+    box-shadow:0 8px 24px rgba(0,0,0,0.08);
     border-top:5px solid var(--naranja);
 }
 
 .section h2{
     color:var(--azul);
     margin-top:0;
-    font-size:30px;
+    font-size:31px;
+    font-weight:800;
 }
 
 .welcome p{
@@ -120,33 +127,33 @@ nav a:hover{
 .highlight{
     text-align:center;
     color:var(--azul);
-    font-size:22px;
-    font-weight:bold;
-    margin-top:30px;
+    font-size:23px;
+    font-weight:800;
+    margin-top:32px;
 }
 
 .slogan{
     text-align:center;
     color:var(--naranja);
     font-style:italic;
-    font-weight:bold;
+    font-weight:700;
     font-size:18px;
 }
 
 .cards{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-    gap:22px;
+    gap:24px;
     margin-top:25px;
 }
 
 .card{
     background:white;
     border:1px solid #e5eaf0;
-    border-radius:16px;
-    padding:28px 20px;
+    border-radius:18px;
+    padding:30px 20px;
     text-align:center;
-    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
     transition:0.3s;
 }
 
@@ -156,7 +163,7 @@ nav a:hover{
 }
 
 .icon{
-    font-size:40px;
+    font-size:42px;
     margin-bottom:10px;
 }
 
@@ -164,6 +171,7 @@ nav a:hover{
     color:var(--azul);
     margin:10px 0;
     font-size:20px;
+    font-weight:800;
 }
 
 .card p{
@@ -176,10 +184,10 @@ nav a:hover{
     margin-top:14px;
     background:var(--naranja);
     color:white;
-    padding:10px 18px;
-    border-radius:8px;
+    padding:11px 20px;
+    border-radius:9px;
     text-decoration:none;
-    font-weight:bold;
+    font-weight:700;
 }
 
 .card a:hover{
@@ -190,9 +198,10 @@ footer{
     background:var(--azul);
     color:white;
     text-align:center;
-    padding:25px 20px;
+    padding:28px 20px;
     border-top:5px solid var(--naranja);
     margin-top:30px;
+    font-weight:600;
 }
 
 @media(max-width:700px){
@@ -205,12 +214,16 @@ footer{
     }
 
     .hero h2{
-        font-size:28px;
+        font-size:30px;
     }
 
     nav a{
         display:block;
         margin:8px 0;
+    }
+
+    .section{
+        padding:26px;
     }
 }
 </style>
@@ -219,7 +232,7 @@ footer{
 <body>
 
 <header>
-    <img src="Despertar Musical.jpg" alt="Logo Despertar Musical" class="logo">
+    <img src="logo-despertar.jpg" alt="Logo Despertar Musical" class="logo">
     <h1>Portal de Mentorías</h1>
     <h2>Programa Despertar Musical</h2>
 </header>
@@ -235,7 +248,7 @@ footer{
 
 <section class="hero">
     <h2>Bienvenidos al Portal de Mentorías</h2>
-    <p>Un espacio de apoyo, organización y recursos para la gestión de mentorías presenciales y virtuales.</p>
+    <p>Un espacio de apoyo, organización y recursos para nuestros mentores.</p>
 </section>
 
 <div class="container">
