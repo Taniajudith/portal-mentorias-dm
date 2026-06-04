@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mentorías Presenciales | Portal de Mentorías</title>
+
+<style>
+:root{
+    --azul:#003b73;
+    --azul-oscuro:#002b55;
+    --naranja:#f47c20;
+    --fondo:#f7f9fc;
+    --gris:#555;
+    --blanco:#ffffff;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:'Segoe UI', Roboto, Arial, sans-serif;
+    background:var(--fondo);
+    color:#1f1f1f;
+    line-height:1.6;
+}
+
+header{
+    background:white;
+    text-align:center;
+    padding:28px 20px;
+    border-bottom:5px solid var(--naranja);
+}
+
+.logo{
+    max-width:220px;
+    display:block;
+    margin:0 auto 12px;
+}
+
+header h1{
+    margin:0;
+    color:var(--azul);
+    font-size:42px;
+    text-transform:uppercase;
+}
+
+header h2{
+    margin:5px 0 0;
+    color:var(--naranja);
+    font-size:23px;
+    text-transform:uppercase;
+}
+
+nav{
+    background:var(--azul);
+    text-align:center;
+    padding:14px 10px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:700;
+    margin:0 12px;
+    font-size:15px;
+}
+
+nav a:hover{
+    color:var(--naranja);
+}
+
+.hero{
+    background:linear-gradient(135deg, var(--azul), var(--azul-oscuro));
+    color:white;
+    text-align:center;
+    padding:55px 20px;
+}
+
+.hero h2{
+    font-size:38px;
+    margin:0;
+}
+
+.hero p{
+    font-size:20px;
+    max-width:850px;
+    margin:15px auto 0;
+}
+
+.container{
+    max-width:1150px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+.intro{
+    background:white;
+    padding:32px;
+    border-radius:18px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    border-top:5px solid var(--naranja);
+    margin-bottom:30px;
+}
+
+.intro h2{
+    color:var(--azul);
+    margin-top:0;
+}
+
+.flow{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    justify-content:center;
+    margin:30px 0;
+}
+
+.flow span{
+    background:white;
+    border:2px solid var(--naranja);
+    color:var(--azul);
+    padding:12px 16px;
+    border-radius:30px;
+    font-weight:800;
+    box-shadow:0 4px 10px rgba(0,0,0,0.06);
+}
+
+.section{
+    background:white;
+    padding:32px;
+    margin-bottom:28px;
+    border-radius:18px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    border-left:7px solid var(--naranja);
+}
+
+.section h2{
+    color:var(--azul);
+    margin-top:0;
+    font-size:29px;
+}
+
+.section h3{
+    color:var(--naranja);
+    margin-bottom:8px;
+}
+
+ul{
+    padding-left:22px;
+}
+
+.notice{
+    background:#fff4e8;
+    border-left:5px solid var(--naranja);
+    padding:18px;
+    border-radius:12px;
+    margin:18px 0;
+    font-weight:600;
+}
+
+.checklist{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:14px;
+    margin-top:15px;
+}
+
+.check{
+    background:#f7f9fc;
+    padding:14px;
+    border-radius:12px;
+    border:1px solid #e5eaf0;
+}
+
+.docs{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:18px;
+}
+
+.docs a{
+    display:inline-block;
+    background:var(--naranja);
+    color:white;
+    text-decoration:none;
+    padding:11px 16px;
+    border-radius:9px;
+    font-weight:700;
+}
+
+.docs a:hover{
+    background:var(--azul);
+}
+
+.example{
+    background:#eef5fb;
+    border-left:5px solid var(--azul);
+    padding:16px;
+    border-radius:10px;
+    font-family:Consolas, monospace;
+    margin-top:12px;
+}
+
+.faq details{
+    background:#f7f9fc;
+    padding:16px;
+    border-radius:12px;
+    margin-bottom:12px;
+    border:1px solid #e5eaf0;
+}
+
+.faq summary{
+    font-weight:800;
+    color:var(--azul);
+    cursor:pointer;
+}
+
+footer{
+    background:var(--azul);
+    color:white;
+    text-align:center;
+    padding:25px 20px;
+    border-top:5px solid var(--naranja);
+    margin-top:30px;
+}
+
+@media(max-width:700px){
+    header h1{
+        font-size:30px;
+    }
+
+    nav a{
+        display:block;
+        margin:8px 0;
+    }
+
+    .hero h2{
+        font-size:29px;
+    }
+
+    .section{
+        padding:24px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <img src="logo-despertar.jpg" alt="Logo Despertar Musical" class="logo">
+    <h1>Mentorías Presenciales</h1>
+    <h2>Programa Despertar Musical</h2>
+</header>
+
+<nav>
+    <a href="index.html">Inicio</a>
+    <a href="calendario.html">Calendario</a>
+    <a href="presencial.html">Mentorías Presenciales</a>
+    <a href="virtual.html">Mentorías Virtuales</a>
+    <a href="recursos.html">Recursos Generales</a>
+    <a href="contactos.html">Contactos</a>
+</nav>
+
+<section class="hero">
+    <h2>Proceso de Mentorías Presenciales</h2>
+    <p>Guía de trabajo para organizar, documentar y dar seguimiento a las visitas presenciales de mentoría.</p>
+</section>
+
+<div class="container">
+
+    <section class="intro">
+        <h2>Bienvenida a la modalidad presencial</h2>
+        <p>
+        En esta sección encontrará los procesos, documentos y recursos necesarios para realizar
+        las visitas de mentoría presencial de forma organizada, profesional y alineada con los
+        estándares del Programa Despertar Musical.
+        </p>
+    </section>
+
+    <div class="flow">
+        <span>1️⃣ Preparación</span>
+        <span>2️⃣ Primera Visita</span>
+        <span>3️⃣ Observación</span>
+        <span>4️⃣ Informes</span>
+        <span>5️⃣ Facturación</span>
+        <span>6️⃣ Preguntas Frecuentes</span>
+    </div>
+
+    <section class="section">
+        <h2>1️⃣ Preparación antes de la Primera Visita</h2>
+        <p>
+        Antes de iniciar el proceso, el mentor debe revisar cuidadosamente el itinerario,
+        confirmar información importante y prepararse para representar al programa de manera profesional.
+        </p>
+
+        <h3>Lista de cotejo</h3>
+        <div class="checklist">
+            <div class="check">☐ Revisar itinerario de visitas.</div>
+            <div class="check">☐ Confirmar centros, salones y horarios.</div>
+            <div class="check">☐ Verificar direcciones antes de la visita.</div>
+            <div class="check">☐ Revisar documentos requeridos.</div>
+            <div class="check">☐ Preparar información de contacto.</div>
+            <div class="check">☐ Cumplir con el código de vestimenta.</div>
+        </div>
+
+        <div class="notice">
+            El mentor debe utilizar vestimenta profesional, cómoda, casual y adecuada. No se recomienda el uso de pantalones cortos,
+            chancletas, vestimenta muy ajustada o camisas con logos o diseños llamativos o inapropiados.
+        </div>
+
+        <div class="docs">
+            <a href="#">Descargar Reglamento</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>2️⃣ Primera Visita de Mentoría</h2>
+        <p>
+        La primera visita es clave para establecer acuerdos, aclarar expectativas y promover una comunicación efectiva
+        entre el mentor y el personal participante.
+        </p>
+
+        <h3>Durante la primera visita se debe:</h3>
+        <ul>
+            <li>Presentarse y compartir información de contacto.</li>
+            <li>Solicitar teléfonos y correos del centro, supervisor y personal participante.</li>
+            <li>Discutir las reglas de visitas de mentoría.</li>
+            <li>Confirmar itinerario, horarios y procedimiento para cambios.</li>
+            <li>Orientar sobre asistencia, documentos e informes.</li>
+        </ul>
+
+        <div class="docs">
+            <a href="#">Descargar Instrumento de Orientación</a>
+            <a href="#">Descargar Formulario de Asistencia</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>3️⃣ Observación y Retroalimentación</h2>
+        <p>
+        Durante la observación, el mentor acompaña al educador en su proceso de implantación curricular,
+        identifica fortalezas y ofrece recomendaciones que apoyen su desarrollo profesional.
+        </p>
+
+        <h3>Comunicación efectiva</h3>
+        <ul>
+            <li>Utilizar vocabulario profesional.</li>
+            <li>Comenzar la retroalimentación destacando fortalezas.</li>
+            <li>Luego ofrecer sugerencias para mejorar áreas de oportunidad.</li>
+            <li>Mantener un tono y volumen de voz apropiado.</li>
+            <li>Utilizar lenguaje musical al nivel del maestro o asistente.</li>
+            <li>Ser empático con las situaciones del salón.</li>
+        </ul>
+
+        <div class="notice">
+            El servicio directo es con el personal participante. El mentor no debe intervenir directamente con los estudiantes
+            ni hacer comentarios sobre situaciones particulares de niños.
+        </div>
+
+        <div class="docs">
+            <a href="#">Instrumento de Observación Infantes y Maternales</a>
+            <a href="#">Instrumento de Observación Preescolar</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>4️⃣ Informes de Mentoría</h2>
+        <p>
+        El informe permite documentar el objetivo trabajado, el seguimiento a recomendaciones anteriores,
+        las nuevas recomendaciones y cualquier situación especial ocurrida durante la visita.
+        </p>
+
+        <h3>Antes de enviar el informe, verifique:</h3>
+        <div class="checklist">
+            <div class="check">☐ Programa especificado correctamente.</div>
+            <div class="check">☐ Centro y salón correctos.</div>
+            <div class="check">☐ Fecha y número de visita correctos.</div>
+            <div class="check">☐ Información compatible con el instrumento de observación.</div>
+            <div class="check">☐ Copia enviada a despertarmusical@cmpr.edu.</div>
+        </div>
+
+        <h3>Formato sugerido para el asunto del correo</h3>
+        <div class="example">
+        Informe #5 HS Paraíso Infantil Salón 5 Nombre del Mentor
+        </div>
+
+        <div class="docs">
+            <a href="#">Descargar Informe de Mentoría</a>
+            <a href="#">Ver ejemplo de correo</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>5️⃣ Facturación y Cuadre</h2>
+        <p>
+        El mentor debe enviar los documentos en la fecha estipulada. Luego de ser verificados por la coordinación,
+        recibirá autorización para entregar su factura.
+        </p>
+
+        <h3>Documentos requeridos</h3>
+        <ul>
+            <li>Formulario de asistencia.</li>
+            <li>Instrumento de orientación, si aplica.</li>
+            <li>Instrumento de observación.</li>
+            <li>Informe de visitas de mentoría.</li>
+            <li>Factura.</li>
+            <li>Informe de labor realizada y horas trabajadas.</li>
+        </ul>
+
+        <div class="notice">
+            Importante: No debe entregar la factura hasta recibir la autorización correspondiente. Si los documentos no se entregan
+            en la fecha estipulada, la factura será procesada en el próximo periodo de cuadre.
+        </div>
+
+        <div class="docs">
+            <a href="#">Descargar Factura</a>
+            <a href="#">Descargar Informe de Labor Realizada</a>
+            <a href="calendario.html">Ver Calendario de Cuadres</a>
+        </div>
+    </section>
+
+    <section class="section faq">
+        <h2>6️⃣ Preguntas Frecuentes</h2>
+
+        <details>
+            <summary>¿Se puede cambiar una visita de mentoría?</summary>
+            <p>Solo en situaciones justificadas y con notificación escrita a la coordinación del Programa Despertar Musical.</p>
+        </details>
+
+        <details>
+            <summary>¿Qué ocurre si la visita no se puede realizar por razones ajenas al mentor?</summary>
+            <p>La visita no se repone. El mentor debe documentar la situación en el informe y en el instrumento correspondiente.</p>
+        </details>
+
+        <details>
+            <summary>¿Puedo intervenir directamente con los niños?</summary>
+            <p>No. El servicio directo es con el personal participante. El mentor no debe intervenir con estudiantes ni hacer comentarios sobre situaciones particulares de niños.</p>
+        </details>
+
+        <details>
+            <summary>¿Cuándo puedo entregar la factura?</summary>
+            <p>Luego de que la coordinación confirme que los documentos fueron recibidos y verificados.</p>
+        </details>
+
+        <details>
+            <summary>¿Qué documentos debo enviar?</summary>
+            <p>Asistencia, instrumento de orientación si aplica, instrumento de observación, informe de mentoría, factura e informe de labor realizada.</p>
+        </details>
+    </section>
+
+</div>
+
+<footer>
+    Educando a través de la música, transformando generaciones.
+</footer>
+
+</body>
+</html>
