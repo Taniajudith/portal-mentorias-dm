@@ -8,37 +8,43 @@
 <style>
 :root{
     --azul:#003b73;
-    --azul-claro:#eaf3fb;
+    --azul-oscuro:#002b55;
     --naranja:#f47c20;
-    --gris:#666666;
+    --gris:#555;
+    --fondo:#f7f9fc;
     --blanco:#ffffff;
 }
 
+*{
+    box-sizing:border-box;
+}
+
 body{
-    font-family: Arial, sans-serif;
     margin:0;
-    background:#f7f9fc;
+    font-family:Arial, sans-serif;
+    background:var(--fondo);
     color:#1f1f1f;
     line-height:1.6;
 }
 
 header{
-    background:white;
+    background:var(--blanco);
+    padding:25px 20px;
     text-align:center;
-    padding:35px 20px 25px;
-    border-bottom:6px solid var(--naranja);
+    border-bottom:5px solid var(--naranja);
 }
 
 .logo{
-    max-width:260px;
-    margin-bottom:15px;
+    max-width:240px;
+    margin-bottom:10px;
 }
 
 header h1{
     margin:0;
     color:var(--azul);
-    font-size:42px;
+    font-size:44px;
     text-transform:uppercase;
+    letter-spacing:1px;
 }
 
 header h2{
@@ -50,36 +56,43 @@ header h2{
 
 nav{
     background:var(--azul);
-    padding:14px;
     text-align:center;
+    padding:14px 10px;
 }
 
 nav a{
     color:white;
     text-decoration:none;
-    margin:0 14px;
     font-weight:bold;
+    margin:0 12px;
+    font-size:15px;
+}
+
+nav a:hover{
+    color:var(--naranja);
 }
 
 .hero{
-    background:linear-gradient(135deg, var(--azul), #005a9c);
+    background:linear-gradient(135deg, var(--azul), var(--azul-oscuro));
     color:white;
-    padding:55px 20px;
+    padding:60px 20px;
     text-align:center;
 }
 
 .hero h2{
-    font-size:36px;
+    font-size:38px;
     margin:0;
+    text-transform:uppercase;
 }
 
 .hero p{
     font-size:20px;
-    color:#f3f3f3;
+    max-width:800px;
+    margin:15px auto 0;
 }
 
 .container{
-    max-width:1100px;
+    max-width:1150px;
     margin:auto;
     padding:40px 20px;
 }
@@ -87,15 +100,16 @@ nav a{
 .section{
     background:white;
     padding:35px;
-    margin-bottom:28px;
-    border-radius:14px;
-    box-shadow:0 3px 12px rgba(0,0,0,0.08);
+    margin-bottom:30px;
+    border-radius:16px;
+    box-shadow:0 4px 14px rgba(0,0,0,0.08);
     border-top:5px solid var(--naranja);
 }
 
 .section h2{
     color:var(--azul);
     margin-top:0;
+    font-size:30px;
 }
 
 .welcome p{
@@ -105,10 +119,10 @@ nav a{
 
 .highlight{
     text-align:center;
-    font-size:20px;
-    font-weight:bold;
     color:var(--azul);
-    margin-top:25px;
+    font-size:22px;
+    font-weight:bold;
+    margin-top:30px;
 }
 
 .slogan{
@@ -116,41 +130,55 @@ nav a{
     color:var(--naranja);
     font-style:italic;
     font-weight:bold;
+    font-size:18px;
 }
 
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+    gap:22px;
+    margin-top:25px;
 }
 
 .card{
     background:white;
-    border:2px solid #e8eef5;
-    border-radius:14px;
-    padding:25px 20px;
+    border:1px solid #e5eaf0;
+    border-radius:16px;
+    padding:28px 20px;
     text-align:center;
-    box-shadow:0 3px 10px rgba(0,0,0,0.07);
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    border-color:var(--naranja);
+}
+
+.icon{
+    font-size:40px;
+    margin-bottom:10px;
 }
 
 .card h3{
     color:var(--azul);
-    margin-bottom:10px;
+    margin:10px 0;
+    font-size:20px;
 }
 
-.card .icon{
-    font-size:36px;
-    color:var(--naranja);
+.card p{
+    font-size:15px;
+    color:var(--gris);
 }
 
 .card a{
     display:inline-block;
-    margin-top:12px;
-    padding:10px 18px;
+    margin-top:14px;
     background:var(--naranja);
     color:white;
-    text-decoration:none;
+    padding:10px 18px;
     border-radius:8px;
+    text-decoration:none;
     font-weight:bold;
 }
 
@@ -164,6 +192,26 @@ footer{
     text-align:center;
     padding:25px 20px;
     border-top:5px solid var(--naranja);
+    margin-top:30px;
+}
+
+@media(max-width:700px){
+    header h1{
+        font-size:32px;
+    }
+
+    header h2{
+        font-size:18px;
+    }
+
+    .hero h2{
+        font-size:28px;
+    }
+
+    nav a{
+        display:block;
+        margin:8px 0;
+    }
 }
 </style>
 </head>
@@ -171,7 +219,7 @@ footer{
 <body>
 
 <header>
-    <img src="logo-despertar.jpg" alt="Logo Despertar Musical" class="logo">
+    <img src="Despertar Musical.jpg" alt="Logo Despertar Musical" class="logo">
     <h1>Portal de Mentorías</h1>
     <h2>Programa Despertar Musical</h2>
 </header>
@@ -187,7 +235,7 @@ footer{
 
 <section class="hero">
     <h2>Bienvenidos al Portal de Mentorías</h2>
-    <p>Un espacio de apoyo, organización y recursos para nuestros mentores.</p>
+    <p>Un espacio de apoyo, organización y recursos para la gestión de mentorías presenciales y virtuales.</p>
 </section>
 
 <div class="container">
@@ -211,7 +259,9 @@ footer{
 
     <section class="section">
         <h2>Propósito del Portal</h2>
+
         <p>El Portal de Mentorías de Despertar Musical ha sido creado para brindar a los mentores acceso centralizado a los procesos, documentos, calendarios y recursos necesarios para el desempeño de sus funciones.</p>
+
         <p>Este espacio busca facilitar la planificación y ejecución de las mentorías, promover la consistencia en los procedimientos, apoyar la comunicación entre el equipo de trabajo y fortalecer la calidad de los servicios ofrecidos a los centros participantes.</p>
     </section>
 
@@ -223,35 +273,35 @@ footer{
             <div class="card">
                 <div class="icon">📅</div>
                 <h3>Calendario</h3>
-                <p>Fechas importantes, actividades, reuniones y entregas.</p>
+                <p>Fechas importantes, actividades, reuniones, entregas y facturación.</p>
                 <a href="calendario.html">Ver más</a>
             </div>
 
             <div class="card">
                 <div class="icon">👥</div>
                 <h3>Mentorías Presenciales</h3>
-                <p>Procesos, documentos, informes y facturación.</p>
+                <p>Orientación, observación, informes, documentos y preguntas frecuentes.</p>
                 <a href="presencial.html">Ver más</a>
             </div>
 
             <div class="card">
                 <div class="icon">💻</div>
                 <h3>Mentorías Virtuales</h3>
-                <p>Procesos, documentos y recursos para visitas virtuales.</p>
+                <p>Procesos, documentos, recursos y apoyo para mentorías virtuales.</p>
                 <a href="virtual.html">Ver más</a>
             </div>
 
             <div class="card">
                 <div class="icon">📚</div>
                 <h3>Recursos Generales</h3>
-                <p>Guías, manuales, ejemplos y herramientas de apoyo.</p>
+                <p>Reglamentos, guías, manuales, ejemplos y herramientas de apoyo.</p>
                 <a href="recursos.html">Ver más</a>
             </div>
 
             <div class="card">
                 <div class="icon">📞</div>
                 <h3>Contactos</h3>
-                <p>Información del equipo de coordinación y apoyo.</p>
+                <p>Información del equipo de coordinación, correos y teléfonos.</p>
                 <a href="contactos.html">Ver más</a>
             </div>
 
