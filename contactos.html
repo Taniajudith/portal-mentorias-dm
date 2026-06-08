@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -6,63 +7,60 @@
 <title>Contactos | Portal de Mentorías</title>
 
 <style>
+
 :root{
     --azul:#003b73;
     --azul-oscuro:#002b55;
     --naranja:#f47c20;
     --fondo:#f7f9fc;
-    --gris:#555;
 }
 
-*{ box-sizing:border-box; }
+*{
+    box-sizing:border-box;
+}
 
 body{
     margin:0;
     font-family:'Segoe UI', Roboto, Arial, sans-serif;
     background:var(--fondo);
-    color:#1f1f1f;
-    line-height:1.6;
+    color:#333;
 }
 
 header{
     background:white;
     text-align:center;
-    padding:28px 20px;
+    padding:30px 20px;
     border-bottom:5px solid var(--naranja);
 }
 
 .logo{
     max-width:220px;
-    display:block;
-    margin:0 auto 12px;
+    margin-bottom:15px;
 }
 
 header h1{
     margin:0;
     color:var(--azul);
     font-size:42px;
-    text-transform:uppercase;
 }
 
 header h2{
-    margin:5px 0 0;
+    margin-top:8px;
     color:var(--naranja);
-    font-size:23px;
-    text-transform:uppercase;
+    font-size:22px;
 }
 
 nav{
     background:var(--azul);
     text-align:center;
-    padding:14px 10px;
+    padding:14px;
 }
 
 nav a{
     color:white;
     text-decoration:none;
-    font-weight:700;
     margin:0 12px;
-    font-size:15px;
+    font-weight:bold;
 }
 
 nav a:hover{
@@ -70,35 +68,33 @@ nav a:hover{
 }
 
 .hero{
-    background:linear-gradient(135deg, var(--azul), var(--azul-oscuro));
+    background:linear-gradient(135deg,var(--azul),var(--azul-oscuro));
     color:white;
     text-align:center;
-    padding:55px 20px;
+    padding:60px 20px;
 }
 
 .hero h2{
-    font-size:38px;
     margin:0;
+    font-size:38px;
 }
 
 .hero p{
     font-size:20px;
-    max-width:850px;
-    margin:15px auto 0;
+    margin-top:15px;
 }
 
 .container{
-    max-width:1150px;
+    max-width:1200px;
     margin:auto;
     padding:40px 20px;
 }
 
 .intro{
     background:white;
-    padding:32px;
+    padding:30px;
     border-radius:18px;
-    box-shadow:0 6px 18px rgba(0,0,0,0.08);
-    border-top:5px solid var(--naranja);
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
     margin-bottom:30px;
 }
 
@@ -109,173 +105,193 @@ nav a:hover{
 
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:22px;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
 }
 
 .card{
     background:white;
+    padding:25px;
     border-radius:18px;
-    padding:28px 22px;
-    box-shadow:0 6px 18px rgba(0,0,0,0.08);
-    border-left:7px solid var(--naranja);
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-5px);
-}
-
-.icon{
-    font-size:38px;
-    margin-bottom:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    border-left:6px solid var(--naranja);
 }
 
 .card h3{
     color:var(--azul);
-    margin:0 0 8px;
-    font-size:22px;
+    margin-top:0;
 }
 
 .position{
     color:var(--naranja);
-    font-weight:800;
+    font-weight:bold;
     margin-bottom:10px;
 }
 
 .ext{
-    background:#fff4e8;
-    color:var(--azul);
     display:inline-block;
-    padding:8px 14px;
-    border-radius:30px;
-    font-weight:800;
-    margin-top:10px;
+    background:#fff3e8;
+    color:var(--azul);
+    padding:8px 15px;
+    border-radius:25px;
+    font-weight:bold;
 }
 
 .info{
-    background:white;
-    padding:30px;
-    border-radius:18px;
-    margin-top:30px;
-    box-shadow:0 6px 18px rgba(0,0,0,0.08);
-    border-top:5px solid var(--naranja);
+    margin-top:35px;
 }
 
-.info h2{
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.info-card{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    text-align:center;
+}
+
+.info-card h3{
     color:var(--azul);
     margin-top:0;
-}
-
-.email{
-    font-weight:800;
-    color:var(--azul);
 }
 
 footer{
     background:var(--azul);
     color:white;
     text-align:center;
-    padding:25px 20px;
+    padding:25px;
+    margin-top:40px;
     border-top:5px solid var(--naranja);
-    margin-top:30px;
 }
 
 @media(max-width:700px){
-    header h1{ font-size:30px; }
-    nav a{ display:block; margin:8px 0; }
-    .hero h2{ font-size:29px; }
+
+header h1{
+    font-size:30px;
 }
+
+nav a{
+    display:block;
+    margin:8px 0;
+}
+
+.hero h2{
+    font-size:30px;
+}
+
+}
+
 </style>
+
 </head>
 
 <body>
 
 <header>
-    <img src="logo-despertar.jpg" alt="Logo Despertar Musical" class="logo">
-    <h1>Contactos</h1>
-    <h2>Programa Despertar Musical</h2>
+
+<img src="logo-despertar.jpg" alt="Logo Despertar Musical" class="logo">
+
+<h1>CONTACTOS</h1>
+<h2>Programa Despertar Musical</h2>
+
 </header>
 
 <nav>
-    <a href="index.html">Inicio</a>
-    <a href="calendario.html">Calendario</a>
-    <a href="presencial.html">Mentorías Presenciales</a>
-    <a href="virtual.html">Mentorías Virtuales</a>
-    <a href="recursos.html">Recursos Generales</a>
-    <a href="contactos.html">Contactos</a>
+<a href="index.html">Inicio</a>
+<a href="calendario.html">Calendario</a>
+<a href="presencial.html">Mentorías Presenciales</a>
+<a href="virtual.html">Mentorías Virtuales</a>
+<a href="recursos.html">Recursos Generales</a>
+<a href="contactos.html">Contactos</a>
 </nav>
 
 <section class="hero">
-    <h2>Equipo de Contacto</h2>
-    <p>Información de apoyo para procesos de mentoría, documentación, facturación y asuntos administrativos.</p>
+<h2>Equipo de Contacto</h2>
+<p>Información de apoyo para procesos de mentoría, documentación y asuntos administrativos.</p>
 </section>
 
 <div class="container">
 
-    <section class="intro">
-        <h2>¿Con quién me comunico?</h2>
-        <p>
-        Si necesita asistencia relacionada con procesos de mentoría, documentación, facturación o asuntos administrativos,
-        puede comunicarse con el equipo de Despertar Musical.
-        </p>
-        <p>
-        Para asuntos relacionados con mentorías y seguimiento de procesos, recomendamos comunicarse inicialmente con la
-        Coordinadora del Programa.
-        </p>
-    </section>
+<div class="intro">
 
-    <section class="cards">
+<h2>¿Con quién me comunico?</h2>
 
-        <div class="card">
-            <div class="icon">🟠</div>
-            <h3>Sra. Francelyn Figueroa Troche</h3>
-            <div class="position">Directora</div>
-            <div class="ext">Ext. 244</div>
-        </div>
+<p>
+Si necesita asistencia relacionada con procesos de mentoría, documentación, facturación o asuntos administrativos,
+puede comunicarse con cualquiera de los siguientes miembros del equipo de Despertar Musical.
+</p>
 
-        <div class="card">
-            <div class="icon">🔵</div>
-            <h3>Sra. Tania J. González Colón</h3>
-            <div class="position">Directora Auxiliar</div>
-            <div class="ext">Ext. 276</div>
-        </div>
+<p>
+Para asuntos relacionados con mentorías y seguimiento de procesos, recomendamos comunicarse inicialmente con la Coordinadora del Programa.
+</p>
 
-        <div class="card">
-            <div class="icon">🟢</div>
-            <h3>Sra. Nathalia E. Pérez García</h3>
-            <div class="position">Coordinadora</div>
-            <div class="ext">Ext. 228</div>
-        </div>
+</div>
 
-        <div class="card">
-            <div class="icon">🟣</div>
-            <h3>Sra. Evelyn Medina Medina</h3>
-            <div class="position">Asistente Administrativo</div>
-            <div class="ext">Ext. 291</div>
-        </div>
+<div class="cards">
 
-    </section>
+<div class="card">
+<h3>Sra. Francelyn Figueroa Troche</h3>
+<div class="position">Directora</div>
+<div class="ext">Ext. 244</div>
+</div>
 
-    <section class="info">
-        <h2>Información General</h2>
+<div class="card">
+<h3>Sra. Tania J. González Colón</h3>
+<div class="position">Directora Auxiliar</div>
+<div class="ext">Ext. 276</div>
+</div>
 
-        <p>
-        📧 Correo electrónico institucional:<br>
-        <span class="email">despertarmusical@cmpr.edu</span>
-        </p>
+<div class="card">
+<h3>Sra. Nathalia E. Pérez García</h3>
+<div class="position">Coordinadora</div>
+<div class="ext">Ext. 228</div>
+</div>
 
-        <p>
-        🏢 Conservatorio de Música de Puerto Rico<br>
-        Programa Despertar Musical
-        </p>
-    </section>
+<div class="card">
+<h3>Sra. Evelyn Medina Medina</h3>
+<div class="position">Asistente Administrativo</div>
+<div class="ext">Ext. 291</div>
+</div>
+
+</div>
+
+<div class="info">
+
+<div class="info-grid">
+
+<div class="info-card">
+<h3>📞 Teléfono</h3>
+<p><strong>(787) 751-0160</strong></p>
+</div>
+
+<div class="info-card">
+<h3>📧 Correo Electrónico</h3>
+<p>despertarmusical@cmpr.edu</p>
+</div>
+
+<div class="info-card">
+<h3>🏢 Ubicación</h3>
+<p>
+Conservatorio de Música de Puerto Rico<br>
+Programa Despertar Musical
+</p>
+</div>
+
+</div>
+
+</div>
 
 </div>
 
 <footer>
-    Educando a través de la música, transformando generaciones.
+Educando a través de la música, transformando generaciones.
 </footer>
 
 </body>
 </html>
+
