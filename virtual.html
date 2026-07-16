@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mentorías Virtuales | Portal de Mentorías</title>
+
+<style>
+
+:root{
+    --azul:#003b73;
+    --azul-oscuro:#002b55;
+    --azul-claro:#eef6fc;
+    --naranja:#f47c20;
+    --naranja-claro:#fff4e8;
+    --fondo:#f6f8fb;
+    --blanco:#ffffff;
+    --texto:#202936;
+    --gris:#5d6875;
+    --borde:#dfe7ef;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:"Segoe UI", Roboto, Arial, sans-serif;
+    background:var(--fondo);
+    color:var(--texto);
+    line-height:1.65;
+}
+
+/* ENCABEZADO */
+
+header{
+    background:var(--blanco);
+    text-align:center;
+    padding:28px 20px 32px;
+    border-bottom:5px solid var(--naranja);
+}
+
+.logo{
+    display:block;
+    width:100%;
+    max-width:220px;
+    height:auto;
+    margin:0 auto 14px;
+}
+
+header h1{
+    margin:0;
+    color:var(--azul);
+    font-size:42px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+header h2{
+    margin:6px 0 0;
+    color:var(--naranja);
+    font-size:22px;
+    text-transform:uppercase;
+}
+
+/* MENÚ PRINCIPAL */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:var(--azul);
+    text-align:center;
+    padding:14px 12px;
+    box-shadow:0 4px 12px rgba(0,0,0,.12);
+}
+
+nav a{
+    display:inline-block;
+    color:var(--blanco);
+    text-decoration:none;
+    font-weight:700;
+    font-size:15px;
+    margin:4px 11px;
+    transition:.2s;
+}
+
+nav a:hover,
+nav a:focus{
+    color:var(--naranja);
+}
+
+/* PORTADA */
+
+.hero{
+    background:linear-gradient(135deg,var(--azul),var(--azul-oscuro));
+    color:var(--blanco);
+    text-align:center;
+    padding:65px 20px;
+}
+
+.hero h2{
+    margin:0;
+    font-size:40px;
+}
+
+.hero p{
+    max-width:850px;
+    margin:15px auto 0;
+    font-size:20px;
+    color:#eef6ff;
+}
+
+/* CONTENIDO */
+
+.container{
+    max-width:1150px;
+    margin:auto;
+    padding:42px 20px;
+}
+
+.intro,
+.section{
+    background:var(--blanco);
+    border-radius:18px;
+    box-shadow:0 7px 22px rgba(0,0,0,.07);
+}
+
+.intro{
+    padding:34px;
+    margin-bottom:30px;
+    border-top:5px solid var(--naranja);
+}
+
+.intro h2{
+    margin-top:0;
+    color:var(--azul);
+    font-size:30px;
+}
+
+.intro p{
+    margin-bottom:0;
+    font-size:17px;
+}
+
+/* ÍNDICE INTERACTIVO */
+
+.flow{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:14px;
+    margin:30px 0 38px;
+}
+
+.flow a{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:64px;
+    background:var(--blanco);
+    color:var(--azul);
+    border:2px solid var(--naranja);
+    border-radius:15px;
+    padding:12px 15px;
+    text-align:center;
+    text-decoration:none;
+    font-weight:800;
+    box-shadow:0 5px 14px rgba(0,0,0,.06);
+    transition:.25s;
+}
+
+.flow a:hover,
+.flow a:focus{
+    background:var(--naranja);
+    color:var(--blanco);
+    transform:translateY(-3px);
+}
+
+/* SECCIONES */
+
+.section{
+    padding:34px;
+    margin-bottom:34px;
+    border-left:7px solid var(--naranja);
+    scroll-margin-top:85px;
+}
+
+.section h2{
+    margin-top:0;
+    color:var(--azul);
+    font-size:29px;
+}
+
+.section h3{
+    color:var(--naranja);
+    margin-top:26px;
+    margin-bottom:10px;
+}
+
+.section ul{
+    padding-left:24px;
+}
+
+.section li{
+    margin-bottom:9px;
+}
+
+/* LISTA DE COTEJO */
+
+.checklist{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:14px;
+    margin-top:18px;
+}
+
+.check{
+    background:var(--azul-claro);
+    border:1px solid var(--borde);
+    border-radius:13px;
+    padding:16px;
+    font-weight:600;
+}
+
+/* TARJETAS DE REGLAS */
+
+.rule-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:18px;
+    margin-top:20px;
+}
+
+.rule-card{
+    background:var(--azul-claro);
+    border:1px solid var(--borde);
+    border-radius:15px;
+    padding:21px;
+}
+
+.rule-card h3{
+    margin-top:0;
+    color:var(--azul);
+}
+
+.rule-card p{
+    margin-bottom:0;
+}
+
+/* AVISOS */
+
+.notice{
+    background:var(--naranja-claro);
+    border-left:5px solid var(--naranja);
+    border-radius:12px;
+    padding:18px;
+    margin:20px 0;
+    font-weight:600;
+}
+
+.recommendation{
+    background:var(--azul-claro);
+    border-left:5px solid var(--azul);
+    border-radius:12px;
+    padding:18px;
+    margin:20px 0;
+}
+
+/* BOTONES DE DOCUMENTOS */
+
+.docs{
+    display:flex;
+    flex-wrap:wrap;
+    gap:13px;
+    margin-top:22px;
+}
+
+.docs a{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--naranja);
+    color:var(--blanco);
+    text-decoration:none;
+    font-weight:750;
+    padding:12px 18px;
+    border-radius:10px;
+    transition:.25s;
+}
+
+.docs a:hover,
+.docs a:focus{
+    background:var(--azul);
+    transform:translateY(-2px);
+}
+
+/* COMUNICACIÓN */
+
+.communication-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(245px,1fr));
+    gap:14px;
+    margin-top:18px;
+}
+
+.communication-item{
+    background:var(--azul-claro);
+    border:1px solid var(--borde);
+    border-radius:13px;
+    padding:17px;
+}
+
+/* PIE DE PÁGINA */
+
+footer{
+    background:var(--azul);
+    color:var(--blanco);
+    text-align:center;
+    padding:27px 20px;
+    border-top:5px solid var(--naranja);
+}
+
+/* CELULAR */
+
+@media(max-width:760px){
+
+    header h1{
+        font-size:30px;
+    }
+
+    header h2{
+        font-size:18px;
+    }
+
+    nav{
+        position:static;
+    }
+
+    nav a{
+        display:block;
+        margin:8px 0;
+    }
+
+    .hero{
+        padding:48px 18px;
+    }
+
+    .hero h2{
+        font-size:30px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .intro,
+    .section{
+        padding:25px;
+    }
+
+    .section h2{
+        font-size:25px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <img
+        src="logo-despertar.jpg"
+        alt="Logo del Programa Despertar Musical"
+        class="logo">
+
+```
+<h1>Mentorías Virtuales</h1>
+<h2>Programa Despertar Musical</h2>
+```
+
+</header>
+
+<nav>
+    <a href="index.html">Inicio</a>
+    <a href="calendario.html">Calendario</a>
+    <a href="presencial.html">Mentorías Presenciales</a>
+    <a href="virtual.html">Mentorías Virtuales</a>
+    <a href="recursos.html">Recursos Generales</a>
+    <a href="contactos.html">Contactos</a>
+</nav>
+
+<section class="hero">
+    <h2>Proceso de Mentorías Virtuales</h2>
+
+```
+<p>
+    Guía de trabajo para organizar, desarrollar, documentar y dar seguimiento
+    a las reuniones virtuales de mentoría del Programa Despertar Musical.
+</p>
+```
+
+</section>
+
+<main class="container">
+
+```
+<section class="intro">
+    <h2>Bienvenida a la modalidad virtual</h2>
+
+    <p>
+        En esta sección encontrará los procesos, documentos y recursos necesarios
+        para realizar las mentorías virtuales de manera organizada, profesional y
+        alineada con los estándares del Programa Despertar Musical.
+    </p>
+</section>
+
+<div class="flow">
+    <a href="#preparacion">1️⃣ Preparación</a>
+    <a href="#primera-reunion">2️⃣ Primera reunión</a>
+    <a href="#reglas">3️⃣ Reglas</a>
+    <a href="#informes">4️⃣ Informes</a>
+    <a href="#facturacion">5️⃣ Facturación</a>
+    <a href="#comunicacion">6️⃣ Comunicación efectiva</a>
+</div>
+
+<!-- 1. PREPARACIÓN -->
+
+<section id="preparacion" class="section">
+
+    <h2>1️⃣ Preparación antes de la sesión</h2>
+
+    <p>
+        Antes de iniciar la mentoría virtual, el mentor deberá verificar que
+        cuenta con todos los recursos tecnológicos, documentos y coordinaciones
+        necesarias para garantizar una reunión efectiva con la participante.
+    </p>
+
+    <h3>Lista de cotejo</h3>
+
+    <div class="checklist">
+
+        <div class="check">
+            ☐ Verificar el calendario de mentorías.
+        </div>
+
+        <div class="check">
+            ☐ Confirmar la fecha y hora programada.
+        </div>
+
+        <div class="check">
+            ☐ Revisar que el enlace de Microsoft Teams funcione correctamente.
+        </div>
+
+        <div class="check">
+            ☐ Tener disponible el módulo correspondiente de la Plataforma Virtual.
+        </div>
+
+        <div class="check">
+            ☐ Verificar acceso a la Plataforma Virtual.
+        </div>
+
+        <div class="check">
+            ☐ Revisar los documentos que se utilizarán durante la reunión.
+        </div>
+
+        <div class="check">
+            ☐ Confirmar la reunión con la participante con anticipación,
+            corroborando que recibió el enlace de Microsoft Teams y que
+            conoce cómo acceder a la reunión.
+        </div>
+
+    </div>
+
+    <div class="docs">
+
+        <a href="Reglamento_Visitas_Virtuales.docx">
+            📄 Descargar Reglamento de Mentorías Virtuales
+        </a>
+
+        <a href="calendario.html">
+            📅 Ver Calendario de Mentorías
+        </a>
+
+    </div>
+
+</section>
+
+<!-- 2. PRIMERA REUNIÓN -->
+
+<section id="primera-reunion" class="section">
+
+    <h2>2️⃣ Primera reunión de mentoría</h2>
+
+    <p>
+        La primera reunión de mentoría tiene como propósito establecer una
+        comunicación efectiva con la participante, aclarar las expectativas
+        del proceso y coordinar el desarrollo de las reuniones de seguimiento.
+    </p>
+
+    <h3>Durante la primera reunión se debe:</h3>
+
+    <ul>
+        <li>Presentarse e intercambiar información de contacto.</li>
+
+        <li>
+            Confirmar los teléfonos y correos electrónicos necesarios.
+        </li>
+
+        <li>
+            Discutir el itinerario y horario de las seis reuniones de mentoría.
+        </li>
+
+        <li>
+            Explicar el procedimiento para solicitar cambios de fecha u horario.
+        </li>
+
+        <li>
+            Dialogar sobre la importancia de la puntualidad y la disponibilidad
+            para las reuniones.
+        </li>
+
+        <li>
+            Aclarar las expectativas y responsabilidades del proceso de mentoría.
+        </li>
+    </ul>
+
+</section>
+
+<!-- 3. REGLAS -->
+
+<section id="reglas" class="section">
+
+    <h2>3️⃣ Reglas para las mentorías virtuales</h2>
+
+    <p>
+        Las siguientes normas contribuyen al buen desarrollo del proceso de
+        mentoría y garantizan una comunicación efectiva entre la participante,
+        el mentor y la administración del Programa Despertar Musical.
+    </p>
+
+    <div class="rule-grid">
+
+        <article class="rule-card">
+            <h3>✅ Confirmaciones</h3>
+
+            <p>
+                El mentor es responsable de confirmar cada reunión de seguimiento
+                con la participante. Si, luego de realizar las gestiones
+                correspondientes, no obtiene respuesta, deberá comunicarse con la
+                oficina del Programa Despertar Musical para recibir apoyo y
+                determinar los próximos pasos.
+            </p>
+        </article>
+
+        <article class="rule-card">
+            <h3>🔄 Gestión de cambios</h3>
+
+            <p>
+                Todo cambio relacionado con el proceso de mentoría deberá ser
+                consultado y autorizado por la oficina del Programa Despertar Musical.
+            </p>
+        </article>
+
+        <article class="rule-card">
+            <h3>⚠️ Cancelaciones</h3>
+
+            <p>
+                Si una participante se ausenta a dos reuniones consecutivas, el
+                mentor deberá notificarlo inmediatamente a la oficina del Programa
+                Despertar Musical. Todas las gestiones realizadas deberán
+                documentarse en la plataforma.
+            </p>
+        </article>
+
+    </div>
+
+    <div class="notice">
+        <strong>Importante:</strong> Las reuniones quedarán detenidas luego de
+        dos ausencias consecutivas hasta que la oficina del Programa Despertar
+        Musical autorice su continuación.
+    </div>
+
+</section>
+
+<!-- 4. INFORMES -->
+
+<section id="informes" class="section">
+
+    <h2>4️⃣ Informes de mentoría</h2>
+
+    <p>
+        Los informes deberán contener toda la información discutida durante
+        el seguimiento y documentar las gestiones, acuerdos y próximos pasos
+        establecidos con la participante.
+    </p>
+
+    <h3>Antes de completar el informe, verifique:</h3>
+
+    <div class="checklist">
+
+        <div class="check">
+            ☐ Fecha correcta.
+        </div>
+
+        <div class="check">
+            ☐ Número de reunión correcto.
+        </div>
+
+        <div class="check">
+            ☐ Información completa.
+        </div>
+
+        <div class="check">
+            ☐ Gestiones realizadas.
+        </div>
+
+        <div class="check">
+            ☐ Acuerdos establecidos.
+        </div>
+
+        <div class="check">
+            ☐ Próximos pasos documentados.
+        </div>
+
+    </div>
+
+    <div class="docs">
+
+        <a href="ejemplo-informe-virtual.docx">
+            📄 Ver ejemplo de informe
+        </a>
+
+    </div>
+
+</section>
+
+<!-- 5. FACTURACIÓN -->
+
+<section id="facturacion" class="section">
+
+    <h2>5️⃣ Facturación y cuadre</h2>
+
+    <p>
+        El mentor deberá entregar los documentos en la fecha estipulada.
+        Luego de ser verificados por la administración, se procederá a
+        procesar su factura y hacer entrega de la misma al área de Finanzas.
+    </p>
+
+    <h3>Documentos requeridos</h3>
+
+    <ul>
+        <li>Factura.</li>
+        <li>Informe de labores realizadas y horas trabajadas.</li>
+    </ul>
+
+    <div class="notice">
+        <strong>Importante:</strong> No se procesará ninguna factura hasta
+        validar la documentación entregada. Si los documentos no se entregan
+        en la fecha estipulada, la factura será procesada durante el próximo
+        periodo de cuadre.
+    </div>
+
+    <div class="docs">
+
+        <a href="ejemplo-factura.docx">
+            📝 Descargar ejemplo de factura
+        </a>
+
+        <a href="calendario.html">
+            📅 Ver calendario de cuadres
+        </a>
+
+    </div>
+
+</section>
+
+<!-- 6. COMUNICACIÓN -->
+
+<section id="comunicacion" class="section">
+
+    <h2>6️⃣ Comunicación efectiva</h2>
+
+    <p>
+        La comunicación efectiva fortalece el proceso de mentoría y favorece
+        un ambiente de confianza, respeto y colaboración entre el mentor y
+        la participante.
+    </p>
+
+    <h3>Durante la mentoría recuerde:</h3>
+
+    <div class="communication-grid">
+
+        <div class="communication-item">
+            Utilizar vocabulario profesional.
+        </div>
+
+        <div class="communication-item">
+            Mantener un trato respetuoso.
+        </div>
+
+        <div class="communication-item">
+            Comenzar la retroalimentación destacando las fortalezas observadas.
+        </div>
+
+        <div class="communication-item">
+            Ofrecer recomendaciones dirigidas a fortalecer las áreas de oportunidad.
+        </div>
+
+        <div class="communication-item">
+            Mantener un tono y volumen de voz apropiados.
+        </div>
+
+        <div class="communication-item">
+            Adaptar el lenguaje musical al nivel de conocimiento de la participante.
+        </div>
+
+        <div class="communication-item">
+            Mostrar empatía ante las situaciones que puedan surgir durante el proceso.
+        </div>
+
+        <div class="communication-item">
+            Establecer claramente las expectativas desde la primera reunión de mentoría.
+        </div>
+
+    </div>
+
+    <div class="recommendation">
+        <strong>Recomendación:</strong> Mantenga la cámara encendida, procure
+        utilizar un espacio organizado y con buena iluminación, y reduzca las
+        distracciones y el ruido durante la reunión.
+    </div>
+
+</section>
+```
+
+</main>
+
+<footer>
+    Educando a través de la música, transformando generaciones.
+</footer>
+
+</body>
+</html>
