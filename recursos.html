@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Recursos Generales | Portal de Mentorías</title>
+
+<style>
+:root{
+    --azul:#003b73;
+    --azul-oscuro:#002b55;
+    --azul-claro:#eef6fc;
+    --naranja:#f47c20;
+    --naranja-claro:#fff4e8;
+    --fondo:#f6f8fb;
+    --blanco:#ffffff;
+    --texto:#202936;
+    --gris:#5d6875;
+    --borde:#dfe7ef;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:"Segoe UI", Roboto, Arial, sans-serif;
+    background:var(--fondo);
+    color:var(--texto);
+    line-height:1.65;
+}
+
+/* ENCABEZADO */
+
+header{
+    background:var(--blanco);
+    text-align:center;
+    padding:28px 20px 32px;
+    border-bottom:5px solid var(--naranja);
+}
+
+.logo{
+    display:block;
+    width:100%;
+    max-width:220px;
+    height:auto;
+    margin:0 auto 14px;
+}
+
+header h1{
+    margin:0;
+    color:var(--azul);
+    font-size:42px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+header h2{
+    margin:6px 0 0;
+    color:var(--naranja);
+    font-size:22px;
+    text-transform:uppercase;
+}
+
+/* MENÚ */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:var(--azul);
+    text-align:center;
+    padding:14px 12px;
+    box-shadow:0 4px 12px rgba(0,0,0,.12);
+}
+
+nav a{
+    display:inline-block;
+    color:var(--blanco);
+    text-decoration:none;
+    font-weight:700;
+    font-size:15px;
+    margin:4px 11px;
+}
+
+nav a:hover,
+nav a:focus{
+    color:var(--naranja);
+}
+
+/* PORTADA */
+
+.hero{
+    background:linear-gradient(135deg,var(--azul),var(--azul-oscuro));
+    color:var(--blanco);
+    text-align:center;
+    padding:65px 20px;
+}
+
+.hero h2{
+    margin:0;
+    font-size:40px;
+}
+
+.hero p{
+    max-width:850px;
+    margin:15px auto 0;
+    font-size:20px;
+    color:#eef6ff;
+}
+
+/* CONTENIDO */
+
+.container{
+    max-width:1180px;
+    margin:auto;
+    padding:42px 20px;
+}
+
+.intro{
+    background:var(--blanco);
+    padding:34px;
+    margin-bottom:30px;
+    border-radius:18px;
+    border-top:5px solid var(--naranja);
+    box-shadow:0 7px 22px rgba(0,0,0,.07);
+}
+
+.intro h2{
+    margin-top:0;
+    color:var(--azul);
+    font-size:30px;
+}
+
+/* ÍNDICE */
+
+.resource-menu{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+    gap:14px;
+    margin:30px 0 38px;
+}
+
+.resource-menu a{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:65px;
+    padding:13px 15px;
+    background:var(--blanco);
+    color:var(--azul);
+    border:2px solid var(--naranja);
+    border-radius:15px;
+    text-decoration:none;
+    text-align:center;
+    font-weight:800;
+    box-shadow:0 5px 14px rgba(0,0,0,.06);
+    transition:.25s;
+}
+
+.resource-menu a:hover,
+.resource-menu a:focus{
+    background:var(--naranja);
+    color:var(--blanco);
+    transform:translateY(-3px);
+}
+
+/* CATEGORÍAS */
+
+.resource-section{
+    background:var(--blanco);
+    padding:34px;
+    margin-bottom:34px;
+    border-radius:18px;
+    border-left:7px solid var(--naranja);
+    box-shadow:0 7px 22px rgba(0,0,0,.07);
+    scroll-margin-top:90px;
+}
+
+.resource-section h2{
+    margin-top:0;
+    color:var(--azul);
+    font-size:29px;
+}
+
+.resource-section > p{
+    color:var(--gris);
+}
+
+/* TARJETAS */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:18px;
+    margin-top:22px;
+}
+
+.card{
+    display:flex;
+    flex-direction:column;
+    background:var(--azul-claro);
+    border:1px solid var(--borde);
+    border-radius:16px;
+    padding:22px;
+}
+
+.card-icon{
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.card h3{
+    margin:0 0 8px;
+    color:var(--azul);
+    font-size:20px;
+}
+
+.card p{
+    margin:0 0 18px;
+    color:var(--gris);
+    flex-grow:1;
+}
+
+.card a{
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    background:var(--naranja);
+    color:var(--blanco);
+    text-decoration:none;
+    font-weight:750;
+    padding:11px 16px;
+    border-radius:10px;
+    transition:.25s;
+}
+
+.card a:hover,
+.card a:focus{
+    background:var(--azul);
+    transform:translateY(-2px);
+}
+
+.notice{
+    background:var(--naranja-claro);
+    border-left:5px solid var(--naranja);
+    border-radius:12px;
+    padding:18px;
+    margin-top:25px;
+}
+
+/* PIE */
+
+footer{
+    background:var(--azul);
+    color:var(--blanco);
+    text-align:center;
+    padding:27px 20px;
+    border-top:5px solid var(--naranja);
+}
+
+/* CELULAR */
+
+@media(max-width:760px){
+
+    header h1{
+        font-size:30px;
+    }
+
+    header h2{
+        font-size:18px;
+    }
+
+    nav{
+        position:static;
+    }
+
+    nav a{
+        display:block;
+        margin:8px 0;
+    }
+
+    .hero{
+        padding:48px 18px;
+    }
+
+    .hero h2{
+        font-size:30px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .intro,
+    .resource-section{
+        padding:25px;
+    }
+
+    .resource-section h2{
+        font-size:25px;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <img
+        src="logo-despertar.jpg"
+        alt="Logo del Programa Despertar Musical"
+        class="logo">
+
+```
+<h1>Recursos Generales</h1>
+<h2>Programa Despertar Musical</h2>
+```
+
+</header>
+
+<nav>
+    <a href="index.html">Inicio</a>
+    <a href="calendario.html">Calendario</a>
+    <a href="presencial.html">Mentorías Presenciales</a>
+    <a href="virtual.html">Mentorías Virtuales</a>
+    <a href="recursos.html">Recursos Generales</a>
+    <a href="contactos.html">Contactos</a>
+</nav>
+
+<section class="hero">
+    <h2>Biblioteca de Recursos</h2>
+
+```
+<p>
+    Acceda a los reglamentos, instrumentos, informes, ejemplos y documentos
+    administrativos necesarios para los procesos de mentoría.
+</p>
+```
+
+</section>
+
+<main class="container">
+
+```
+<section class="intro">
+    <h2>Documentos y herramientas de apoyo</h2>
+
+    <p>
+        Esta sección centraliza los documentos utilizados en las mentorías
+        presenciales y virtuales. Seleccione una categoría para acceder
+        rápidamente a los recursos correspondientes.
+    </p>
+</section>
+
+<div class="resource-menu">
+    <a href="#reglamentos">📘 Reglamentos</a>
+    <a href="#instrumentos">📝 Instrumentos</a>
+    <a href="#informes">📋 Informes</a>
+    <a href="#facturacion">💲 Facturación</a>
+    <a href="#calendario">📅 Calendario</a>
+    <a href="#enlaces">🔗 Enlaces útiles</a>
+</div>
+
+<!-- REGLAMENTOS -->
+
+<section id="reglamentos" class="resource-section">
+
+    <h2>📘 Reglamentos</h2>
+
+    <p>
+        Consulte las normas y procedimientos oficiales correspondientes a
+        cada modalidad de mentoría.
+    </p>
+
+    <div class="cards">
+
+        <article class="card">
+            <div class="card-icon">🏫</div>
+
+            <h3>Reglamento de Mentorías Presenciales</h3>
+
+            <p>
+                Pautas, normas, documentos requeridos y procesos administrativos
+                para las visitas presenciales.
+            </p>
+
+            <a href="Reglamento_Visitas_Mentoria.pdf" target="_blank">
+                Abrir PDF
+            </a>
+        </article>
+
+        <article class="card">
+            <div class="card-icon">💻</div>
+
+            <h3>Reglamento de Mentorías Virtuales</h3>
+
+            <p>
+                Normas y procedimientos para el acompañamiento virtual y las
+                reuniones mediante Microsoft Teams.
+            </p>
+
+            <a href="Reglamento_Visitas_Virtuales.docx" download>
+                Descargar Word
+            </a>
+        </article>
+
+    </div>
+
+</section>
+
+<!-- INSTRUMENTOS -->
+
+<section id="instrumentos" class="resource-section">
+
+    <h2>📝 Instrumentos</h2>
+
+    <p>
+        Documentos utilizados durante las primeras visitas y los procesos de
+        observación.
+    </p>
+
+    <div class="cards">
+
+        <article class="card">
+            <div class="card-icon">👋</div>
+
+            <h3>Instrumento de Orientación</h3>
+
+            <p>
+                Documento para registrar los acuerdos y la información discutida
+                durante la primera visita.
+            </p>
+
+            <a href="Informe de visitas de mentoria - ORIENTACION.pdf" target="_blank">
+                Abrir PDF
+            </a>
+        </article>
+
+        <article class="card">
+            <div class="card-icon">👶</div>
+
+            <h3>Observación: Infantes y Maternales</h3>
+
+            <p>
+                Instrumento para documentar la planificación, el ambiente,
+                la implantación y el seguimiento.
+            </p>
+
+            <a href="Instrumento de observacion - Infantes y maternales REV. AGO 2019.pdf" target="_blank">
+                Abrir PDF
+            </a>
+        </article>
+
+        <article class="card">
+            <div class="card-icon">🎵</div>
+
+            <h3>Observación: Preescolar</h3>
+
+            <p>
+                Instrumento para evaluar la implantación musical en el nivel
+                preescolar.
+            </p>
+
+            <a href="observacion-preescolar.pdf" target="_blank">
+                Abrir PDF
+            </a>
+        </article>
+
+    </div>
+
+</section>
+
+<!-- INFORMES -->
+
+<section id="informes" class="resource-section">
+
+    <h2>📋 Informes</h2>
+
+    <p>
+        Formatos y ejemplos para documentar adecuadamente los procesos de mentoría.
+    </p>
+
+    <div class="cards">
+
+        <article class="card">
+            <div class="card-icon">🗒️</div>
+
+            <h3>Informe de Mentoría Presencial</h3>
+
+            <p>
+                Formato para registrar objetivos, observaciones, recomendaciones
+                y seguimiento de las visitas presenciales.
+            </p>
+
+            <a href="informe-mentoria.docx" download>
+                Descargar Word
+            </a>
+        </article>
+
+        <article class="card">
+            <div class="card-icon">💻</div>
+
+            <h3>Ejemplo de Informe Virtual</h3>
+
+            <p>
+                Ejemplo para completar y documentar las reuniones virtuales de
+                seguimiento.
+            </p>
+
+            <a href="ejemplo-informe-virtual.docx" download>
+                Descargar Word
+            </a>
+        </article>
+
+    </div>
+
+</section>
+
+<!-- FACTURACIÓN -->
+
+<section id="facturacion" class="resource-section">
+
+    <h2>💲 Facturación</h2>
+
+    <p>
+        Ejemplos y documentos administrativos para los procesos de facturación.
+    </p>
+
+    <div class="cards">
+
+        <article class="card">
+            <div class="card-icon">🏫</div>
+
+            <h3>Ejemplo de Factura Presencial</h3>
+
+            <p>
+                Modelo de factura correspondiente a los servicios de mentoría
+                presencial.
+            </p>
+
+            <a href="ejemplo-factura.docx" download>
+                Descargar Word
+            </a>
+        </article>
+
+        <article class="card">
+            <div class="card-icon">💻</div>
+
+            <h3>Ejemplo de Factura Virtual</h3>
+
+            <p>
+                Modelo de factura correspondiente a los servicios de mentoría
+                virtual.
+            </p>
+
+            <a href="ejemplo-factura-virtual.docx" download>
+                Descargar Word
+            </a>
+        </article>
+
+    </div>
+
+    <div class="notice">
+        <strong>Importante:</strong> Antes de procesar una factura, la
+        administración deberá validar que toda la documentación requerida
+        esté completa.
+    </div>
+
+</section>
+
+<!-- CALENDARIO -->
+
+<section id="calendario" class="resource-section">
+
+    <h2>📅 Calendario</h2>
+
+    <p>
+        Consulte las fechas oficiales de mentorías, reuniones, entregas de
+        documentos y periodos de cuadre.
+    </p>
+
+    <div class="cards">
+
+        <article class="card">
+            <div class="card-icon">📆</div>
+
+            <h3>Calendario del Semestre</h3>
+
+            <p>
+                Fechas correspondientes al periodo de agosto a diciembre de 2026.
+            </p>
+
+            <a href="calendario.html">
+                Ver calendario
+            </a>
+        </article>
+
+    </div>
+
+</section>
+
+<!-- ENLACES -->
+
+<section id="enlaces" class="resource-section">
+
+    <h2>🔗 Enlaces útiles</h2>
+
+    <p>
+        Accesos relacionados con los procesos de mentoría y la comunicación
+        con el Programa Despertar Musical.
+    </p>
+
+    <div class="cards">
+
+        <article class="card">
+            <div class="card-icon">👥</div>
+
+            <h3>Microsoft Teams</h3>
+
+            <p>
+                Plataforma utilizada para las reuniones virtuales de mentoría.
+            </p>
+
+            <a href="https://teams.microsoft.com/" target="_blank" rel="noopener">
+                Abrir Microsoft Teams
+            </a>
+        </article>
+
+        <article class="card">
+            <div class="card-icon">☎️</div>
+
+            <h3>Contactos del Programa</h3>
+
+            <p>
+                Información del equipo de dirección, coordinación y apoyo
+                administrativo.
+            </p>
+
+            <a href="contactos.html">
+                Ver contactos
+            </a>
+        </article>
+
+        <article class="card">
+            <div class="card-icon">✉️</div>
+
+            <h3>Correo institucional</h3>
+
+            <p>
+                Comuníquese con la oficina del Programa Despertar Musical.
+            </p>
+
+            <a href="mailto:despertarmusical@cmpr.edu">
+                Enviar correo
+            </a>
+        </article>
+
+    </div>
+
+</section>
+```
+
+</main>
+
+<footer>
+    Educando a través de la música, transformando generaciones.
+</footer>
+
+</body>
+</html>
